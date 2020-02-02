@@ -35,14 +35,14 @@ class Client extends Personnes {
     payezAttraction(montant, attraction) {
         this.budget = this.budget - montant;
         this.montantRembourser = montant;
-        this.transaction = attraction.getName()
+        this.transaction = attraction.getName();
     }
 
     payezRestaurant(menus1, menus2, restaurant) {
         this.budget = this.budget - (menus1 * restaurant.getMenus1());
         this.budget = this.budget - (menus2 * restaurant.getMenus2());
         this.montantRembourser = (menus1 * restaurant.getMenus1()) + (menus2 * restaurant.getMenus2());
-        this.transaction = "Restaurant";
+        this.transaction = restaurant.getName();
     }
 
     affichage() {

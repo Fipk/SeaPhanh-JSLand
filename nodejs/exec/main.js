@@ -63,21 +63,12 @@ while (test.getBudget() >= 0) {
             console.log((i+1) + ": " + listeManager[i].getName());
         }
         let action = readlineSync.questionInt('Que souhaitez-vous donc faire ?');
-        for (let i=0; i < listeEmploye.length; i++) {
-            for (let j=0; j < listeRestaurant.length; j++) {
-                if (listeEmploye[i].getName() == listeRestaurant[j].getEmploye()) {
-                    listeManager[action-1].probleme(listeEmploye[j], listeRestaurant[action-1], test);
-                    break;
-                }
-            }
-            for (let k=0; k < listeAttraction.length; k++) {
-                if (listeEmploye[i].getName() == listeAttraction[k].getEmploye()) {
-                    listeManager[action-1].probleme(listeEmploye[k], listeAttraction[action-1], test)
-                    break;
-                }
-            }
+        if (test.getTrans() == listeAttraction[0].getName()) {
+            probleme(caisse,manson,test);
+        } else if (test.getTrans() == listeRestaurant[0].getName()) {
+            probleme(rest, molly, test);
         }
-        
+    
     }else if (nombre == 4) {
         console.log("Merci de votre visite et à bientôt.");
         break;
